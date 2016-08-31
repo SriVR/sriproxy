@@ -1,0 +1,41 @@
+buildscript {
+repositories {
+    mavenLocal()
+    jcenter()
+  }
+
+  dependencies {
+  
+}
+}
+
+repositories {
+  mavenLocal()
+  jcenter()
+}
+def versions = [
+
+        jetty  : '9.3.11.v20160721'
+]
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+dependencies {
+
+  compile "org.eclipse.jetty:jetty-server:$versions.jetty"
+  compile "org.eclipse.jetty:jetty-servlet:$versions.jetty"
+  compile "org.eclipse.jetty:jetty-servlets:$versions.jetty"
+  compile "org.eclipse.jetty:jetty-webapp:$versions.jetty"
+  compile "org.eclipse.jetty:jetty-client:$versions.jetty"
+  compile 'com.sun.jersey:jersey-server:1.19.1'
+  
+}
+
+
+
+
+jar {
+  archiveName 'srproxy.jar'
+}
