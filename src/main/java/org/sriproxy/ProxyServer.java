@@ -21,7 +21,7 @@ public class ProxyServer {
 		 
 		 SslContextFactory sslContextFactory = new SslContextFactory();
 		
-		 sslContextFactory.setKeyStorePath("g:\\Sridhar\\javaproject\\sriproxy\\cert\\sendco.jks");
+		 sslContextFactory.setKeyStorePath("/home/devsri/project/proxy/sriproxy/cert/sendco.jks");
 		 sslContextFactory.setKeyStorePassword("sendcokey");
 		 sslContextFactory.setKeyManagerPassword("sendcokey");
 		 SslConnectionFactory sslConnectionFactory = new SslConnectionFactory(sslContextFactory, org.eclipse.jetty.http.HttpVersion.HTTP_1_1.toString());
