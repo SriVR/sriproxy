@@ -20,7 +20,7 @@ def versions = [
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-
+apply plugin: 'application'
 
 dependencies {
 
@@ -33,9 +33,12 @@ dependencies {
   
 }
 
-
+mainClassName = "org.sriproxy.ProxyServer"
 
 
 jar {
   archiveName 'srproxy.jar'
+  manifest {
+        attributes 'Main-Class': 'org.sriproxy.ProxyServer'
+    }
 }
