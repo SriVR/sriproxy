@@ -15,6 +15,22 @@ import org.sriproxy.handler.ProxyHandler;
 public class ProxyServer {
 	
 	public static void main(String[] args) throws Exception {
+		
+		
+		HttpClient client = new HttpClient(new SslContextFactory());
+	     
+	     try {
+				client.setMaxRequestsQueuedPerDestination(10);
+				client.setMaxConnectionsPerDestination(200); 
+				client.setConnectTimeout(30000); 
+				client.start();
+				
+				WebClient.setClient(client);
+				
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 	   
 		 Server server = new Server(8080);
 		 
@@ -50,20 +66,7 @@ public class ProxyServer {
 	     
 	     
 	     
-	     HttpClient client = new HttpClient(new SslContextFactory());
 	     
-	     try {
-				client.setMaxRequestsQueuedPerDestination(10);
-				client.setMaxConnectionsPerDestination(200); 
-				client.setConnectTimeout(30000); 
-				client.start();
-				
-				WebClient.setClient(client);
-				
-			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 	}
 
 }
